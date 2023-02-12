@@ -1,0 +1,13 @@
+sf_object_definitions:
+  - name: 'Admin'
+    mapping:
+      type: ['doctrine', 'serializer']
+      class: 'Project\AdminBundle\Entity\Admin'
+
+definitions:
+  SecurityToken:
+    type: 'object'
+    properties:
+      token: {type: 'string'}
+      refresh_token: {type: 'string'}
+      exp: {type: 'string'}

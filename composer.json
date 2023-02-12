@@ -1,0 +1,40 @@
+{
+    "name": "volodymyr-klymniuk/swagger-ui-gen",
+    "description": "Extra functionality for generate Swagger specification",
+    "type": "component",
+    "license": "MIT-advertising",
+    "autoload": {
+        "psr-4": {
+            "VolodymyrKlymniuk\\SwaggerUiGen\\": "src/"
+        }
+    },
+    "authors": [
+        {
+            "name": "Volodymyr Klymniuk",
+            "email": "Volodymyr.Klymniuk@gmail.com"
+        }
+    ],
+    "minimum-stability": "dev",
+    "require": {
+        "symfony/config": "6.3.x-dev",
+        "symfony/console": "6.3.x-dev",
+        "symfony/doctrine-bridge": "6.3.x-dev",
+        "symfony/dependency-injection": "6.3.x-dev",
+        "symfony/finder": "6.3.x-dev",
+        "symfony/framework-bundle": "6.3.x-dev",
+        "symfony/http-foundation": "6.3.x-dev",
+        "symfony/routing": "6.3.x-dev",
+        "symfony/yaml": "6.3.x-dev",
+        "symfony/templating": "6.3.x-dev"
+    },
+    "require-dev": {
+        "phpunit/phpunit": "10.1.x-dev",
+        "symfony/form": "6.3.x-dev",
+        "symfony/validator": "6.3.x-dev",
+        "symfony/var-dumper": "6.3.x-dev"
+    },
+    "prefer-stable": true,
+    "scripts": {
+        "test": "phpunit"
+    }
+}
