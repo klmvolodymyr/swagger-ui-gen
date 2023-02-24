@@ -1,0 +1,11 @@
+swagger_ui_gen_data:
+  path: '/swagger-gen/data.json'
+  defaults: { _controller: 'SwaggerUIGenBundle:Swagger:data' }
+
+swagger_ui_gen_dump:
+  path: '/swagger-gen/dump'
+  defaults: { _controller: 'SwaggerUIGenBundle:Swagger:dump' }
+
+swagger_ui_gen_doc:
+  path: '/swagger-gen/doc'
+  defaults: { _controller: 'SwaggerUIGenBundle:Swagger:doc' }

@@ -1,0 +1,14 @@
+services:
+  _defaults:
+    autowire: true      # Automatically injects dependencies in your services.
+    autoconfigure: true # Automatically registers your services as commands, event subscribers, etc.
+    public: true
+
+  VolodymyrKlymniuk\SwaggerUIGen\Component\DataProvider\DataProviderInterface:
+    class: 'VolodymyrKlymniuk\SwaggerUIGen\Component\DataProvider\YamlDataProvider'
+    arguments: [[], [], []]
+    factory: 'VolodymyrKlymniuk\SwaggerUIGen\Bundle\Service\DataProviderFactory:createDataProvider'
+
+  VolodymyrKlymniuk\SwaggerUIGen\Component\SwaggerProvider:
+    class: 'VolodymyrKlymniuk\SwaggerUIGen\Component\SwaggerProvider'
+    arguments: [~]
