@@ -3,44 +3,44 @@ services:
     autowire: true      # Automatically injects dependencies in your services.
     autoconfigure: true # Automatically registers your services as commands, event subscribers, etc.
     public: false
-  
+
   VolodymyrKlymniuk\SwaggerUIGen\Bundle\:
     resource: '../../*'
     exclude: '../../{DependencyInjection,ModelHandler/Operation/FormTypeBuilder}'
-  
+
   Symfony\Component\Validator\Mapping\Factory\MetadataFactoryInterface: '@validator.mapping.class_metadata_factory'
-  
+
   VolodymyrKlymniuk\SwaggerUIGen\Component\DataProvider\DataProviderInterface:
     class: 'VolodymyrKlymniuk\SwaggerUIGen\Component\DataProvider\YamlDataProvider'
     arguments: [[], [], []]
-    factory: 'VolodymyrKlymniuk\SwaggerUIGen\Bundle\Service\DataProviderFactory:createDataProvider'
-  
+    factory: [ 'VolodymyrKlymniuk\SwaggerUIGen\Bundle\Service\DataProviderFactory', 'createDataProvider']
+
   VolodymyrKlymniuk\SwaggerUIGen\Component\SwaggerProvider:
     class: 'VolodymyrKlymniuk\SwaggerUIGen\Component\SwaggerProvider'
-  
+
   VolodymyrKlymniuk\SwaggerUIGen\Component\ModelHandler\GeneralFactory:
     class: 'VolodymyrKlymniuk\SwaggerUIGen\Component\ModelHandler\GeneralFactory'
-  
+
   # Symfony Handlers
   VolodymyrKlymniuk\SwaggerUIGen\Bundle\ModelHandler\Swagger\DefinitionsBuilder:
     tags:
       - {name: 'swagger_uigen.swagger_data_normalizer'}
       - {name: 'swagger_uigen.model_builder.swagger'}
-  
+
   VolodymyrKlymniuk\SwaggerUIGen\Bundle\ModelHandler\Swagger\RoutePaths:
     tags:
       - {name: 'swagger_uigen.swagger_data_normalizer'}
       - {name: 'swagger_uigen.model_builder.swagger'}
-  
+
   # Response Operation handlers
   VolodymyrKlymniuk\SwaggerUIGen\Bundle\ModelHandler\Operation\GeneralBuilder:
     tags:
       - {name: 'swagger_uigen.model_builder.operation'}
-  
+
   VolodymyrKlymniuk\SwaggerUIGen\Bundle\ModelHandler\Operation\AnnotationBuilder:
     tags:
       - {name: 'swagger_uigen.model_builder.operation'}
-  
+
   VolodymyrKlymniuk\SwaggerUIGen\Bundle\ModelHandler\Operation\FormTypeBuilder:
     tags:
       - {name: 'swagger_uigen.model_builder.operation'}
@@ -52,11 +52,11 @@ services:
   VolodymyrKlymniuk\SwaggerUIGen\Bundle\ModelHandler\Schema\DoctrineBuilder:
     tags:
       - {name: 'swagger_uigen.model_builder.schema'}
-  
+
   VolodymyrKlymniuk\SwaggerUIGen\Bundle\ModelHandler\Schema\ValidatorBuilder:
     tags:
       - {name: 'swagger_uigen.model_builder.schema'}
-  
+
   VolodymyrKlymniuk\SwaggerUIGen\Bundle\ModelHandler\Schema\PhpDoc\PhpDocSchemaBuilder:
     tags:
       - {name: 'swagger_uigen.model_builder.schema'}
